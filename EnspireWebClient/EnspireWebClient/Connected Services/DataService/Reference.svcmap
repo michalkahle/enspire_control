@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ef65f164-eba9-4bd4-b709-1c3f1ee978f4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/EnSpireDataService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="V4.wsdl" MetadataType="Wsdl" ID="5fe0ec9e-6184-4bc1-b3b1-3539f13a4cde" SourceId="1" SourceUrl="http://localhost/EnSpireDataService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="3ff935d1-5fdc-4545-90a8-93f33c7c321f" SourceId="1" SourceUrl="http://localhost/EnSpireDataService/mex" />
+    <MetadataFile FileName="V4.xsd" MetadataType="Schema" ID="5103e130-6281-48bd-800f-76adf7b8eb55" SourceId="1" SourceUrl="http://localhost/EnSpireDataService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="df008c84-137c-4b04-9fb8-7c8c5b4e607d" SourceId="1" SourceUrl="http://localhost/EnSpireDataService/mex" />
+    <MetadataFile FileName="EnSpireDataInterface.xsd" MetadataType="Schema" ID="5104877c-803e-4802-9c8b-0f45830a4e3d" SourceId="1" SourceUrl="http://localhost/EnSpireDataService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

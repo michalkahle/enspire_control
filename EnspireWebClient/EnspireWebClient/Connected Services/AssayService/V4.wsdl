@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://PerkinElmer.com/V4" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://PerkinElmer.com/V4" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://PerkinElmer.com/V4/Imports">
+      <xsd:import schemaLocation="" namespace="http://PerkinElmer.com/V4" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/EnSpireAssayInterface" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="EnSpireAssayService_get_StackerState_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_StackerState" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_StackerState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_StackerStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_SubscribeEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeEvents" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_SubscribeEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_UnSubscribeEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnSubscribeEvents" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_UnSubscribeEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnSubscribeEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_StartTimer_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartTimer" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_StartTimer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartTimerResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_StopTimer_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopTimer" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_StopTimer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopTimerResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_LoadPlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadPlate" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_LoadPlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_DispenserParamsChanged_InputMessage">
+    <wsdl:part name="parameters" element="tns:DispenserParamsChanged" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_RegistryValuesChanged_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistryValuesChanged" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_Shutdown_InputMessage">
+    <wsdl:part name="parameters" element="tns:Shutdown" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_StartAssay_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartAssay" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_UnloadPlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnloadPlate" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_UnloadPlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnloadPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_set_Interval_InputMessage">
+    <wsdl:part name="parameters" element="tns:set_Interval" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_set_Interval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:set_IntervalResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_IsOneShot_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_IsOneShot" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_IsOneShot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_IsOneShotResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_set_IsOneShot_InputMessage">
+    <wsdl:part name="parameters" element="tns:set_IsOneShot" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_set_IsOneShot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:set_IsOneShotResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_AllowUnloadPlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_AllowUnloadPlate" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_AllowUnloadPlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_AllowUnloadPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_set_AllowUnloadPlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:set_AllowUnloadPlate" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_set_AllowUnloadPlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:set_AllowUnloadPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_Aperture_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_Aperture" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_Aperture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_ApertureResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_Assays_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_Assays" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_Assays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_AssaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_CurrentState_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_CurrentState" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_CurrentState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_CurrentStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_DispenserState_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_DispenserState" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_DispenserState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_DispenserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_ExcFilterBarcodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_ExcFilterBarcodes" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_ExcFilterBarcodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_ExcFilterBarcodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_Humidity_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_Humidity" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_Humidity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_HumidityResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_InsideSensorTemperature_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_InsideSensorTemperature" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_InsideSensorTemperature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_InsideSensorTemperatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_InsideTemperature_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_InsideTemperature" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_InsideTemperature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_InsideTemperatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_InstrumentConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_InstrumentConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_InstrumentConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_InstrumentConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_InstrumentState_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_InstrumentState" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_InstrumentState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_InstrumentStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_IsInstrumentConnected_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_IsInstrumentConnected" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_IsInstrumentConnected_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_IsInstrumentConnectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_IsPlateLoaded_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_IsPlateLoaded" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_IsPlateLoaded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_IsPlateLoadedResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_LowerSensor_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_LowerSensor" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_LowerSensor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_LowerSensorResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_OutsideTemperature_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_OutsideTemperature" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_OutsideTemperature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_OutsideTemperatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_PlateBarcode_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_PlateBarcode" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_PlateBarcode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_PlateBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_SerialNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_SerialNumber" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_get_SerialNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_SerialNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_set_SimulationMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:set_SimulationMode" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_set_SimulationMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:set_SimulationModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnTimerElapsed_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnTimerElapsed" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnApertureRead_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnApertureRead" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnAssayContinued_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAssayContinued" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnAssayDone_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAssayDone" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnAssayExportDone_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAssayExportDone" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnAssayPaused_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAssayPaused" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnAssaySaved_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAssaySaved" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnAssayStarted_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAssayStarted" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnCurrentStateChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCurrentStateChanged" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnError_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnError" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnExcFilterBarcodesRead_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnExcFilterBarcodesRead" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnExportDone_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnExportDone" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnInitDone_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnInitDone" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnInstrumentServerConnected_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnInstrumentServerConnected" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnInstrumentStateChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnInstrumentStateChanged" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnPlateBarcodeRead_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPlateBarcodeRead" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnPlateLoaded_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPlateLoaded" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnPlateUnloaded_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPlateUnloaded" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnShakeBegin_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShakeBegin" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnShakeEnd_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShakeEnd" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnShutdown_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnShutdown" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnTemperatureMeasured_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnTemperatureMeasured" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnTemperatureUpdated_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnTemperatureUpdated" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnWaitBegin_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnWaitBegin" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnWaitEnd_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnWaitEnd" />
+  </wsdl:message>
+  <wsdl:message name="EnSpireAssayService_OnAssayError_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnAssayError" />
+  </wsdl:message>
+  <wsdl:portType name="EnSpireAssayService">
+    <wsdl:operation name="get_StackerState">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_StackerState" message="tns:EnSpireAssayService_get_StackerState_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_StackerStateResponse" message="tns:EnSpireAssayService_get_StackerState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeEvents">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/SubscribeEvents" message="tns:EnSpireAssayService_SubscribeEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/SubscribeEventsResponse" message="tns:EnSpireAssayService_SubscribeEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnSubscribeEvents">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/UnSubscribeEvents" message="tns:EnSpireAssayService_UnSubscribeEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/UnSubscribeEventsResponse" message="tns:EnSpireAssayService_UnSubscribeEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartTimer">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/StartTimer" message="tns:EnSpireAssayService_StartTimer_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/StartTimerResponse" message="tns:EnSpireAssayService_StartTimer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopTimer">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/StopTimer" message="tns:EnSpireAssayService_StopTimer_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/StopTimerResponse" message="tns:EnSpireAssayService_StopTimer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadPlate">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/LoadPlate" message="tns:EnSpireAssayService_LoadPlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/LoadPlateResponse" message="tns:EnSpireAssayService_LoadPlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DispenserParamsChanged">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/DispenserParamsChanged" message="tns:EnSpireAssayService_DispenserParamsChanged_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistryValuesChanged">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/RegistryValuesChanged" message="tns:EnSpireAssayService_RegistryValuesChanged_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Shutdown">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/Shutdown" message="tns:EnSpireAssayService_Shutdown_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartAssay">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/StartAssay" message="tns:EnSpireAssayService_StartAssay_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnloadPlate">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/UnloadPlate" message="tns:EnSpireAssayService_UnloadPlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/UnloadPlateResponse" message="tns:EnSpireAssayService_UnloadPlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="set_Interval">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/set_Interval" message="tns:EnSpireAssayService_set_Interval_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/set_IntervalResponse" message="tns:EnSpireAssayService_set_Interval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_IsOneShot">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_IsOneShot" message="tns:EnSpireAssayService_get_IsOneShot_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_IsOneShotResponse" message="tns:EnSpireAssayService_get_IsOneShot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="set_IsOneShot">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/set_IsOneShot" message="tns:EnSpireAssayService_set_IsOneShot_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/set_IsOneShotResponse" message="tns:EnSpireAssayService_set_IsOneShot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_AllowUnloadPlate">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_AllowUnloadPlate" message="tns:EnSpireAssayService_get_AllowUnloadPlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_AllowUnloadPlateResponse" message="tns:EnSpireAssayService_get_AllowUnloadPlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="set_AllowUnloadPlate">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/set_AllowUnloadPlate" message="tns:EnSpireAssayService_set_AllowUnloadPlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/set_AllowUnloadPlateResponse" message="tns:EnSpireAssayService_set_AllowUnloadPlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_Aperture">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_Aperture" message="tns:EnSpireAssayService_get_Aperture_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_ApertureResponse" message="tns:EnSpireAssayService_get_Aperture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_Assays">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_Assays" message="tns:EnSpireAssayService_get_Assays_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_AssaysResponse" message="tns:EnSpireAssayService_get_Assays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_CurrentState">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_CurrentState" message="tns:EnSpireAssayService_get_CurrentState_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_CurrentStateResponse" message="tns:EnSpireAssayService_get_CurrentState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_DispenserState">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_DispenserState" message="tns:EnSpireAssayService_get_DispenserState_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_DispenserStateResponse" message="tns:EnSpireAssayService_get_DispenserState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_ExcFilterBarcodes">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_ExcFilterBarcodes" message="tns:EnSpireAssayService_get_ExcFilterBarcodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_ExcFilterBarcodesResponse" message="tns:EnSpireAssayService_get_ExcFilterBarcodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_Humidity">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_Humidity" message="tns:EnSpireAssayService_get_Humidity_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_HumidityResponse" message="tns:EnSpireAssayService_get_Humidity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_InsideSensorTemperature">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_InsideSensorTemperature" message="tns:EnSpireAssayService_get_InsideSensorTemperature_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_InsideSensorTemperatureResponse" message="tns:EnSpireAssayService_get_InsideSensorTemperature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_InsideTemperature">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_InsideTemperature" message="tns:EnSpireAssayService_get_InsideTemperature_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_InsideTemperatureResponse" message="tns:EnSpireAssayService_get_InsideTemperature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_InstrumentConfiguration">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_InstrumentConfiguration" message="tns:EnSpireAssayService_get_InstrumentConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_InstrumentConfigurationResponse" message="tns:EnSpireAssayService_get_InstrumentConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_InstrumentState">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_InstrumentState" message="tns:EnSpireAssayService_get_InstrumentState_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_InstrumentStateResponse" message="tns:EnSpireAssayService_get_InstrumentState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_IsInstrumentConnected">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_IsInstrumentConnected" message="tns:EnSpireAssayService_get_IsInstrumentConnected_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_IsInstrumentConnectedResponse" message="tns:EnSpireAssayService_get_IsInstrumentConnected_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_IsPlateLoaded">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_IsPlateLoaded" message="tns:EnSpireAssayService_get_IsPlateLoaded_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_IsPlateLoadedResponse" message="tns:EnSpireAssayService_get_IsPlateLoaded_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_LowerSensor">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_LowerSensor" message="tns:EnSpireAssayService_get_LowerSensor_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_LowerSensorResponse" message="tns:EnSpireAssayService_get_LowerSensor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_OutsideTemperature">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_OutsideTemperature" message="tns:EnSpireAssayService_get_OutsideTemperature_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_OutsideTemperatureResponse" message="tns:EnSpireAssayService_get_OutsideTemperature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_PlateBarcode">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_PlateBarcode" message="tns:EnSpireAssayService_get_PlateBarcode_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_PlateBarcodeResponse" message="tns:EnSpireAssayService_get_PlateBarcode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_SerialNumber">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_SerialNumber" message="tns:EnSpireAssayService_get_SerialNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/get_SerialNumberResponse" message="tns:EnSpireAssayService_get_SerialNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="set_SimulationMode">
+      <wsdl:input wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/set_SimulationMode" message="tns:EnSpireAssayService_set_SimulationMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/set_SimulationModeResponse" message="tns:EnSpireAssayService_set_SimulationMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnTimerElapsed">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnTimerElapsed" message="tns:EnSpireAssayService_OnTimerElapsed_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnApertureRead">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnApertureRead" message="tns:EnSpireAssayService_OnApertureRead_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnAssayContinued">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnAssayContinued" message="tns:EnSpireAssayService_OnAssayContinued_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnAssayDone">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnAssayDone" message="tns:EnSpireAssayService_OnAssayDone_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnAssayExportDone">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnAssayExportDone" message="tns:EnSpireAssayService_OnAssayExportDone_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnAssayPaused">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnAssayPaused" message="tns:EnSpireAssayService_OnAssayPaused_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnAssaySaved">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnAssaySaved" message="tns:EnSpireAssayService_OnAssaySaved_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnAssayStarted">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnAssayStarted" message="tns:EnSpireAssayService_OnAssayStarted_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnCurrentStateChanged">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnCurrentStateChanged" message="tns:EnSpireAssayService_OnCurrentStateChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnError">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnError" message="tns:EnSpireAssayService_OnError_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnExcFilterBarcodesRead">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnExcFilterBarcodesRead" message="tns:EnSpireAssayService_OnExcFilterBarcodesRead_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnExportDone">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnExportDone" message="tns:EnSpireAssayService_OnExportDone_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnInitDone">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnInitDone" message="tns:EnSpireAssayService_OnInitDone_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnInstrumentServerConnected">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnInstrumentServerConnected" message="tns:EnSpireAssayService_OnInstrumentServerConnected_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnInstrumentStateChanged">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnInstrumentStateChanged" message="tns:EnSpireAssayService_OnInstrumentStateChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnPlateBarcodeRead">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnPlateBarcodeRead" message="tns:EnSpireAssayService_OnPlateBarcodeRead_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnPlateLoaded">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnPlateLoaded" message="tns:EnSpireAssayService_OnPlateLoaded_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnPlateUnloaded">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnPlateUnloaded" message="tns:EnSpireAssayService_OnPlateUnloaded_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnShakeBegin">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnShakeBegin" message="tns:EnSpireAssayService_OnShakeBegin_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnShakeEnd">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnShakeEnd" message="tns:EnSpireAssayService_OnShakeEnd_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnShutdown">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnShutdown" message="tns:EnSpireAssayService_OnShutdown_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnTemperatureMeasured">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnTemperatureMeasured" message="tns:EnSpireAssayService_OnTemperatureMeasured_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnTemperatureUpdated">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnTemperatureUpdated" message="tns:EnSpireAssayService_OnTemperatureUpdated_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnWaitBegin">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnWaitBegin" message="tns:EnSpireAssayService_OnWaitBegin_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnWaitEnd">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnWaitEnd" message="tns:EnSpireAssayService_OnWaitEnd_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnAssayError">
+      <wsdl:output wsaw:Action="http://PerkinElmer.com/V4/EnSpireAssayService/OnAssayError" message="tns:EnSpireAssayService_OnAssayError_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

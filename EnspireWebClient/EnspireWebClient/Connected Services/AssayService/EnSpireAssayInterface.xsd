@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EnSpireAssayInterface" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EnSpireAssayInterface" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="StackerState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FrameInstalled" type="xs:short" />
+      <xs:element minOccurs="0" name="LeftStackInstalled" type="xs:short" />
+      <xs:element minOccurs="0" name="RightStackInstalled" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackerState" nillable="true" type="tns:StackerState" />
+  <xs:complexType name="ArrayOfAssay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Assay" nillable="true" type="tns:Assay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssay" nillable="true" type="tns:ArrayOfAssay" />
+  <xs:complexType name="Assay">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Assay" nillable="true" type="tns:Assay" />
+  <xs:simpleType name="CurrentState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="csConnectingInstrument" />
+      <xs:enumeration value="csInitializing" />
+      <xs:enumeration value="csIdle" />
+      <xs:enumeration value="csLoadingPlate" />
+      <xs:enumeration value="csUnloadingPlate" />
+      <xs:enumeration value="csMeasuringReference" />
+      <xs:enumeration value="csMeasuring" />
+      <xs:enumeration value="csShaking" />
+      <xs:enumeration value="csWaiting" />
+      <xs:enumeration value="csPaused" />
+      <xs:enumeration value="csWaitingForPlate" />
+      <xs:enumeration value="csSaving" />
+      <xs:enumeration value="csCoverLidOpen" />
+      <xs:enumeration value="csSideLidOpen" />
+      <xs:enumeration value="csScanningFilters" />
+      <xs:enumeration value="csShuttingDown" />
+      <xs:enumeration value="csRestack" />
+      <xs:enumeration value="csStopped" />
+      <xs:enumeration value="csDispensing" />
+      <xs:enumeration value="csDispMeasuring" />
+      <xs:enumeration value="csBackground" />
+      <xs:enumeration value="csDispMaintenance" />
+      <xs:enumeration value="csWaitingTemperature" />
+      <xs:enumeration value="csResetStacker" />
+      <xs:enumeration value="csNone">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65535</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CurrentState" nillable="true" type="tns:CurrentState" />
+  <xs:complexType name="BarcodeData">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BarcodeData" nillable="true" type="tns:BarcodeData" />
+  <xs:simpleType name="ErrorAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Abort" />
+      <xs:enumeration value="Retry" />
+      <xs:enumeration value="Ignore">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Yes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="No">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancel">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorAction" nillable="true" type="tns:ErrorAction" />
+</xs:schema>

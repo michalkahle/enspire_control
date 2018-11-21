@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://PerkinElmer.com/V4" elementFormDefault="qualified" targetNamespace="http://PerkinElmer.com/V4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/EnSpireDataInterface" />
+  <xs:element name="GetValidProtocols">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="level" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetValidProtocolsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EnSpireDataInterface" minOccurs="0" name="GetValidProtocolsResult" nillable="true" type="q1:ArrayOfValidAssayProtocol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefreshProtocols">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
